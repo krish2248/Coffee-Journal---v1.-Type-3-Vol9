@@ -1,0 +1,415 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F3F6ED; /* base */
+  color: #2F3E2E;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* LIGHT MODE */
+body.light-mode {
+  background-color: linear-gradient(to bottom, #F3F6ED, #E9F0E1);
+  color: #2F3E2E;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.light-mode nav {
+  background: rgba(243, 246, 237, 0.9);
+}
+
+body.light-mode .roaster-card,
+body.light-mode .timeline-item .content,
+body.light-mode #flavor-graph {
+  background: #FFFFFF;
+  color: #2F3E2E;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background-color: #3E352F;
+  color: #EDE7DF;
+  font-family: 'Inter', sans-serif;
+}
+
+body.dark-mode nav {
+  background: rgba(62,53,47,0.96);
+}
+
+body.dark-mode .roaster-card,
+body.dark-mode .timeline-item .content,
+body.dark-mode #flavor-graph {
+  background: #4A3F38;
+  color: #EDE7DF;
+}
+
+body.dark-mode .footer {
+  background: #332B26;
+  color: #DAB892;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.7; /* adjust for desired effect */
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.title {
+  font-size: 3em;
+  color: #fff9dd;
+  font-family: 'Playfair Display', serif;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #fff9dd;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 0.9em;
+  color: #fff9dd;
+  animation: scrollFade 1.7s ease-in-out infinite;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(243, 246, 237, 0.05); /* 95% transparent */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  backdrop-filter: blur(8px);
+  transition: top 0.5s ease, background 0.3s ease;
+  z-index: 100;
+}
+
+nav.visible { top: 0; }
+
+.nav-links a {
+  text-decoration: none;
+  color: #2F3E2E;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover { color: #8AB484; }
+
+/* SECTIONS */
+section {
+  max-width: 900px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+/* VIDEO SECTION */
+.video-section {
+  max-width: 1200px; /* Increase horizontal size */
+  width: 100%;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.video-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;      /* Increased length */
+  width: 100%;
+  background: #f7f4ef;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem;
+  margin: 0 auto;         /* Center horizontally */
+}
+
+.video-text {
+  flex: 1;
+}
+
+.video-clip {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.video-clip video {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add to your style.css for vertical roaster cards with hover effect */
+.roaster-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.roaster-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2rem 1rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+  text-align: center;
+}
+.roaster-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(164,196,154,0.3);
+  background: #F3F6ED;
+}
+
+.roaster-card h3 {
+  font-size: 1.5rem;
+  color: #2F3E2E;
+  font-family: 'Playfair Display', serif;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: 1.5px solid #A4C49A;
+  border-radius: 25px;
+  padding: 8px 14px;
+  color: #5A6B58;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+  background: #A4C49A;
+  color: #fff;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  background: #E6EDDE;
+  color: #2F3E2E;
+  padding: 2rem 1rem;
+}
+.footer .social-links {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.footer .social-links a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.footer .social-links a:hover { color: #8AB484; }
+
+/* ==== MOODBOARD ==== */
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.mood-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.mood-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: 16px;
+}
+.mood-item:hover img { transform: scale(1.05); }
+.mood-item p {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(47,62,46,0.6);
+  color: #F3F6ED;
+  padding: 0.5rem;
+  border-radius: 0 0 16px 16px;
+}
+
+/* ==== TASTE TIMELINE ==== */
+.timeline {
+  position: relative;
+  margin: 4rem auto;
+  padding: 2rem 0;
+  max-width: 600px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: #A4C49A;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+}
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; text-align: left; }
+.timeline-item .content {
+  background: #FFFFFF;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.timeline-item .content:hover { transform: scale(1.03); }
+body.dark-mode .timeline::before { background-color: #DAB892; }
+body.dark-mode .timeline-item .content { background: #4A3F38; color: #EDE7DF; }
+
+/* ==== EQUIPMENT HERO ==== */
+.equipment-hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+.equipment-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(75%);
+}
+.equipment-hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #F3F6ED;
+  text-align: center;
+  background: rgba(47,62,46,0.4);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+body.dark-mode .equipment-hero .overlay { background: rgba(62,53,47,0.6); }
+
+/* ==== FLAVOR CHART ==== */
+#flavor-graph {
+  background: #E9F0E1;
+  border-radius: 18px;
+  padding: 2rem;
+  margin: 5rem auto;
+  max-width: 600px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+body.dark-mode #flavor-graph { background: #4B4038; }
+
+/* ==== BREW QUOTES ==== */
+.brew-quote {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 3rem auto;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.brew-quote.visible { opacity: 1; }
+
+/* RESPONSIVE TIMELINE FIX */
+@media(max-width: 700px){
+  .timeline::before { left: 10px; }
+  .timeline-item { width: 100%; padding-left: 2.5rem; text-align: left; }
+  .timeline-item.left, .timeline-item.right { left: 0; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollFade {
+  0%, 100% { opacity: 0.2; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}
+
+
+#map {
+  height: 500px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Full-page background image for intro section */
+.intro-bg {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: url('img/intro-bg.jpg') center center/cover no-repeat;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.intro-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: Add a semi-transparent overlay for better text readability */
+.intro-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 30, 20, 0.8); /* adjust color/opacity as needed */
+  z-index: 1;
+}
+
+
