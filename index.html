@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Specialty Coffee Journal</title>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <img src="/img/coffee-cup.jpg" alt="Coffee Hero Background" class="hero-bg" />
+    <div class="hero-content">
+      <h1 class="title">My Coffee Journal</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="scroll-indicator">↓ scroll</div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-links">
+      <a href="#roasters">Roasters</a>
+      <a href="#cafes">Cafes</a>
+      <a href="#ratings">Coffee Ratings</a>
+      <a href="#estates">Estates</a>
+      <a href="#health">Health Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#add">Add Your Coffee</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle">Dark Roast</button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="intro fade-in intro-bg">
+      <h2>While you sip thru my journal, Listen to my Coffee Playlists 🎧
+      </h2>
+      <p>
+        A personal record of every cup I've tried — from Tokyo’s V60 hand brews to Nordic light roasts.
+        Explore roasters, tasting notes, and my own ratings from around the world.
+      </p>
+
+      <div class="playlist-section">
+        <h3>Rainy Pour-Over Vibes</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4E3UdUs7fUx?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <h3>Espresso Focus Mode</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+    </section>
+
+
+
+       <!-- 🎧 COFFEE PLAYLISTS + EQUIPMENT HERO -->
+    <section id="equipment" class="fade-in">
+      <div class="equipment-hero">
+        <img src="equipment-shelf.jpg" alt="Equipment Shelf">
+        <div class="overlay">
+          <h2>My Equipment Shelf</h2>
+          <p>Each tool has its own story — my grinder, kettle, and brewers that shape every cup.</p>
+        </div>
+      </div>
+   
+    </section>
+
+    <div class="brew-quote fade-quote">“The right gear brews the right story.”</div>
+
+    <!-- ROASTERS SECTION -->
+    <section class="roaster-section fade-in" id="roasters">
+      <h2>Featured Roasters</h2>
+      <div class="roaster-card">
+        <h3>Onibus Coffee, Tokyo</h3>
+        <p><strong>Coffee:</strong> Ethiopia Aricha</p>
+        <p><strong>Description:</strong> Floral, Bergamot, Honey.</p>
+        <p><strong>Rating:</strong> ⭐⭐⭐⭐☆</p>
+      </div>
+      <div class="roaster-card">
+        <h3>La Cabra, Denmark</h3>
+        <p><strong>Coffee:</strong> Kenya Kirinyaga AA</p>
+        <p><strong>Description:</strong> Red berries, citrus, silky finish.</p>
+        <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION: V60 -->
+    <section class="video-section fade-in">
+      <div class="video-card">
+        <div class="video-text">
+          <h2>How to Brew the Perfect V60</h2>
+          <p>
+            Watch this step-by-step guide to mastering the V60 pour-over technique. Learn about grind size, water temperature, and pouring methods to extract the best flavors from your specialty coffee beans. Whether you're a beginner or a seasoned home brewer, this video will help you elevate your coffee experience.
+          </p>
+        </div>
+        <div class="video-clip">
+          <video controls width="350" poster="v60-thumb.jpg">
+            <source src="v60-brew.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION: French Press -->
+    <section class="video-section fade-in">
+      <div class="video-card">
+        <div class="video-text">
+          <h2>How to Brew with a French Press</h2>
+          <p>
+            Discover the classic immersion brewing method with the French Press. This video covers the best grind size, steeping time, and pressing technique for a rich, full-bodied cup. Perfect for those who love bold flavors and a simple brewing process.
+          </p>
+        </div>
+        <div class="video-clip">
+          <video controls width="350" poster="frenchpress-thumb.jpg">
+            <source src="frenchpress-brew.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION: AeroPress -->
+    <section class="video-section fade-in">
+      <div class="video-card">
+        <div class="video-text">
+          <h2>AeroPress Brewing Guide</h2>
+          <p>
+            Learn how to use the versatile AeroPress for a balanced cup of coffee. This tutorial covers the inverted method, recommended ratios, and tips for experimenting with pressure and grind size to suit your taste.
+          </p>
+        </div>
+        <div class="video-clip">
+          <video controls width="350" poster="aeropress-thumb.jpg">
+            <source src="aeropress-brew.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION: Moka Pot -->
+    <section class="video-section fade-in">
+      <div class="video-card">
+        <div class="video-text">
+          <h2>Moka Pot Espresso at Home</h2>
+          <p>
+            Watch this guide to brewing strong, espresso-like coffee with a Moka Pot. Learn how to avoid bitterness, get the right grind, and use water temperature for a delicious Italian-style cup.
+          </p>
+        </div>
+        <div class="video-clip">
+          <video controls width="350" poster="mokapot-thumb.jpg">
+            <source src="mokapot-brew.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER SECTIONS PLACEHOLDER -->
+    <section id="cafes" class="fade-in">
+      <h2>Cafes I’ve Visited</h2>
+      <p>Coming soon — A curated list of memorable cafes around the world.</p>
+    </section>
+
+    <section id="ratings" class="fade-in">
+      <h2>My Coffee Ratings</h2>
+      <p>All coffees I’ve tried rated out of 5 stars, sorted by origin and roast style.</p>
+    </section>
+
+    <section id="estates" class="fade-in">
+      <h2>Coffee Estates</h2>
+      <p>Profiles of estates that produce the world’s finest Arabicas — traceable and sustainable.</p>
+    </section>
+
+    <section id="health" class="fade-in">
+      <h2>Health Blog</h2>
+      <p>Exploring the health benefits and myths around specialty coffee.</p>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Contact</h2>
+      <p>Share recommendations or your favorite brew recipes at: <strong>hello@coffeejournal.com</strong></p>
+    </section>
+
+    <section id="add" class="fade-in">
+      <h2>Add Your Coffee</h2>
+      <p>Submit your own coffee notes to be featured here soon.</p>
+    </section>
+
+    <!-- FEATURED ROASTERS SECTION -->
+    <section id="featured-roasters" class="fade-in">
+      <h2>Featured Roasters</h2>
+      <div class="roaster-card-list">
+        <div class="roaster-card">
+          <img src="roaster1.jpg" alt="Roaster 1">
+          <h3>Origin Coffee Co.</h3>
+          <p>Specializing in single-origin beans, Origin Coffee Co. brings out unique flavors from farms across Ethiopia, Colombia, and Kenya. Their light roasts highlight floral and citrus notes.</p>
+        </div>
+        <div class="roaster-card">
+          <img src="roaster2.jpg" alt="Roaster 2">
+          <h3>Mountain Peak Roasters</h3>
+          <p>Known for their sustainable sourcing and bold blends, Mountain Peak Roasters offers rich, chocolatey profiles perfect for espresso lovers and adventurous palates.</p>
+        </div>
+        <div class="roaster-card">
+          <img src="roaster3.jpg" alt="Roaster 3">
+          <h3>Urban Grind Collective</h3>
+          <p>Urban Grind Collective focuses on direct trade and transparency, roasting beans weekly for maximum freshness and a smooth, balanced cup every time.</p>
+        </div>
+        <div class="roaster-card">
+          <img src="roaster4.jpg" alt="Roaster 4">
+          <h3>Sunrise Artisan Roasters</h3>
+          <p>Sunrise Artisan Roasters crafts small-batch coffees with a passion for experimentation, offering limited releases and seasonal favorites for true coffee enthusiasts.</p>
+        </div>
+        <div class="roaster-card">
+          <img src="roaster5.jpg" alt="Roaster 5">
+          <h3>Blue River Beans</h3>
+          <p>Blue River Beans is dedicated to organic farming and gentle roasting, resulting in clean, sweet flavors and a silky mouthfeel in every cup.</p>
+        </div>
+        <div class="roaster-card">
+          <img src="roaster6.jpg" alt="Roaster 6">
+          <h3>Craft & Crema</h3>
+          <p>Craft & Crema blends artistry and science, producing coffees with complex aromas and lingering finishes, perfect for pour-over and filter methods.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌿 MOODBOARD SECTION -->
+    <section id="moodboard" class="fade-in">
+      <h2>Coffee Moodboard</h2>
+      <div class="mood-grid">
+        <div class="mood-item"><img src="rainy.jpg" alt="Rainy Brew"><p>Rainy Brew</p></div>
+        <div class="mood-item"><img src="beach.jpg" alt="Beach Brew"><p>Beach Brew</p></div>
+        <div class="mood-item"><img src="night.jpg" alt="Night Worker"><p>Night Worker</p></div>
+        <div class="mood-item"><img src="morning.jpg" alt="Morning Sunny"><p>Morning Sunny</p></div>
+      </div>
+    </section>
+
+    <div class="brew-quote fade-quote">“A cup of coffee is a pause between two thoughts.”</div>
+
+    <!-- ☕ TASTE TIMELINE -->
+    <section id="taste-timeline" class="fade-in">
+      <h2>My Taste Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="content"><h3>2019 — First V60</h3><p>Discovered pour-over and fell in love with clarity.</p></div>
+        </div>
+        <div class="timeline-item right">
+          <div class="content"><h3>2021 — Kenyan Obsession</h3><p>Bright and fruity cups became my favorite mornings.</p></div>
+        </div>
+        <div class="timeline-item left">
+          <div class="content"><h3>2023 — Funky Naturals</h3><p>Experimented with natural process beans from Ethiopia.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="brew-quote fade-quote">“Every roast tells a story.”</div>
+
+ 
+
+    <!-- 📊 FLAVOR GRAPH -->
+    <section id="flavor-graph" class="fade-in">
+      <h2>My Flavor Preferences</h2>
+      <canvas id="flavorChart" width="400" height="400"></canvas>
+    </section>
+
+    <div class="brew-quote fade-quote">“Taste is the language of your senses.”</div>
+
+  </main>
+
+  <footer class="footer">
+    <p>Made with ☕ and passion — © 2025 My Specialty Coffee Journal</p>
+    <div class="social-links">
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="https://medium.com/" target="_blank">Medium</a>
+      <a href="https://yourportfolio.com/" target="_blank">Portfolio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Chart.js flavor graph demo
+    const ctx = document.getElementById('flavorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Fruity', 'Nutty', 'Chocolate', 'Floral', 'Citrus', 'Spice'],
+        datasets: [{
+          label: 'My Preferences',
+          data: [8, 6, 7, 9, 7, 5],
+          backgroundColor: 'rgba(138, 180, 132, 0.2)',
+          borderColor: '#8AB484',
+          borderWidth: 2,
+          pointBackgroundColor: '#8AB484'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            angleLines: { display: false },
+            suggestedMin: 0,
+            suggestedMax: 10,
+            pointLabels: { font: { family: 'Poppins', size: 14 } }
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  </script>
+
+
+
+
+
+
+</body>
+</html>
