@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx astro:*)",
+      "Bash(rm -rf node_modules/.vite)",
+      "Bash(npm run:*)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(node:*)",
+      "Bash(taskkill /PID 10176 /F)",
+      "Bash(taskkill /PID 1860 /F)",
+      "Bash(taskkill /PID 2728 /F)",
+      "Bash(taskkill /PID 5592 /F)",
+      "Bash(taskkill /PID 9780 /F)",
+      "Bash(curl -s http://localhost:4321)",
+      "Bash(grep -oiE \".{0,100}\\(error|Cannot read|transform\\).{0,100}\")",
+      "Bash(read f:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm install:*)",
+      "Bash(curl -s http://localhost:4321 -o /dev/null -w \"%{http_code}\")",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(curl -s http://localhost:4321 -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(grep -E \"\\\\.\\(ts|tsx|astro|css|json\\)$\")"
+    ]
+  }
+}
